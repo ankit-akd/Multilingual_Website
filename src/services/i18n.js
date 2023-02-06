@@ -1,7 +1,7 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend"; 
-import Backend from "i18next-http-backend"; 
+
 
 
 // const resources= {

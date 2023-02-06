@@ -4,7 +4,7 @@ import { useTranslation  } from 'react-i18next';
 
 
 function Language({onChange}) {
-    const { t,i18n} = useTranslation();
+    const {i18n} = useTranslation();
     return(
         <div className="select">
         <select 

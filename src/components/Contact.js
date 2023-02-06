@@ -10,7 +10,7 @@ function Contact() {
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
            <div className="image">
-            <img width={220} height={330} src="https://images.unsplash.com/photo-1603714228681-b399854b8f80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FsbCUyMGNlbnRyZXxlbnwwfHwwfHw%3D&auto=format"></img>
+            <img width={220} height={330} src="https://images.unsplash.com/photo-1603714228681-b399854b8f80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FsbCUyMGNlbnRyZXxlbnwwfHwwfHw%3D&auto=format" alt=""></img>
            </div>
           </div>
           <div class="col-lg-5">
