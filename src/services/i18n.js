@@ -41,7 +41,7 @@ i18next
     //resources,
     lng:"en",
     fallbackLng:"en",
-    supportedLngs: ["en","hn"],
+    //supportedLngs: ["en","hn"],
     interpolation:{
         escapeValue:false,
         whiteList : language,
@@ -50,7 +50,7 @@ i18next
         loadPath:'locales/{{lng}}/translation.json',
     },
    
-    debug: process.env.NODE_ENV==="development",
+    debug: process.env.NODE_ENV==="development", //can be omitted
     
 });
 export default i18next;
