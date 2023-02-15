@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -13,20 +13,33 @@ import {
   Career,
 } from "./components";
 import i18next from "./services/i18n";
+import { useTranslation  } from 'react-i18next';
+import {Helmet} from "react-helmet";
+import i18n from "i18next";
 
-ReactDOM.render(
+function App() {
+  const { t } = useTranslation();
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+  return (
     <React.Suspense fallback="Loading...">
-  <Router>
-    
-    <Navigation />
-     <Routes>
-     <Route path="/" element={<Home />} />
-     <Route path="/about" element={<About />} />
-     <Route path="/contact" element={<Contact />} />
-     <Route path="/career" element={<Career />} />
-    </Routes>
-    <Footer />
- </Router>,
- </React.Suspense>,
-  document.getElementById("root")
-);
+      <Helmet>
+        <html lang={i18n.language} />
+        
+      </Helmet>
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/career" element={<Career />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </React.Suspense>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
