@@ -22,6 +22,10 @@ i18next
     backend:{
         loadPath:'locales/{{lng}}/translation.json',
     },
+    // detection:{
+    //   order:['path','cookie'],
+    //   caches:['cookie']  
+    // },
    
     debug: process.env.NODE_ENV==="development", //can be omitted
     

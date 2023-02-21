@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useState} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -16,12 +16,23 @@ import i18next from "./services/i18n";
 import { useTranslation  } from 'react-i18next';
 import {Helmet} from "react-helmet";
 import i18n from "i18next";
+import Cookies from "js-cookie";
 
 function App() {
   const { t } = useTranslation();
+ 
+  useEffect(() => {
+    const lang = Cookies.get("language");
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, []);
+
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
+    Cookies.set("language", i18n.language, {expires:25});
+  },[i18n.language]);
+
   return (
     <React.Suspense fallback="Loading...">
       <Helmet>
